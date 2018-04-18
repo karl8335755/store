@@ -1,0 +1,405 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+section {
+  overflow: hidden; }
+
+.wrapper {
+  font-family: Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+/* ----------Search & Cart---------- */
+#nav {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  right: 0;
+  top: 0;
+  z-index: 99; }
+  #nav ul li {
+    width: 50px;
+    height: 50px;
+    float: right;
+    list-style-type: none;
+    margin-right: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; }
+    #nav ul li img {
+      width: 50%;
+      height: 50%; }
+
+.burger {
+  position: absolute;
+  top: -5%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  margin: 0 20px 20px 20px; }
+
+/* ----------landing---------- */
+#wow-landing {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /*-----Credits to worldofwarcraft.com----- */
+  background-image: url("image/wow-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+  background-position: left;
+  opacity: 1;
+  z-index: 5;
+  /*-----Credits to @NamedYoro from devianart.com----- */ }
+  #wow-landing:hover {
+    opacity: 1; }
+  #wow-landing img {
+    width: 200px;
+    position: relative;
+    float: right;
+    margin: 5% 6% 0 0;
+    visibility: hidden;
+    opacity: 0; }
+    #wow-landing img:hover {
+      transform: scale(1.2); }
+    #wow-landing img:first-child {
+      height: 200px; }
+    #wow-landing img:last-child {
+      height: 250px; }
+
+#merchant {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll; }
+
+.storename {
+  position: absolute;
+  width: 2000px;
+  height: 12%;
+  background: black;
+  color: white;
+  font-size: 4rem;
+  font-weight: 500;
+  opacity: 0.7;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  z-index: 8; }
+  .storename:hover {
+    opacity: 1; }
+  .storename::before {
+    content: "";
+    width: 1.05em;
+    height: 1.05em;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    background-color: black;
+    z-index: -1; }
+  .storename::after {
+    content: "";
+    width: 1.05em;
+    height: 1.05em;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    background-color: black;
+    z-index: -1; }
+
+.bg-zoom {
+  position: absolute;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9;
+  background-color: black;
+  opacity: 1;
+  color: white;
+  font-size: 8rem;
+  font-weight: 500; }
+  .bg-zoom button {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 25px;
+    height: 40px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 30%;
+    opacity: 0; }
+
+#league-landing {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*-----Credits to leagueoflegends.com----- */
+  background-image: url("image/league-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+  background-position: center;
+  opacity: 1;
+  z-index: 5;
+  /*-----Credits to leagueoflegends.com merchants store----- */ }
+  #league-landing:hover {
+    opacity: 1; }
+  #league-landing img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.5s; }
+    #league-landing img:hover {
+      transform: scale(1.2); }
+    #league-landing img:nth-child(1) {
+      left: 65%;
+      bottom: 25%; }
+    #league-landing img:nth-child(2) {
+      left: 30%;
+      bottom: 27%; }
+    #league-landing img:nth-child(3) {
+      left: 0;
+      top: 20%; }
+    #league-landing img:nth-child(4) {
+      top: 0;
+      left: 30%; }
+
+.leftclip {
+  -webkit-clip-path: polygon(0 0%, 0 100vh, 100% 100vh);
+  clip-path: polygon(0 0%, 0 100vh, 100% 100vh); }
+
+.rightclip {
+  -webkit-clip-path: polygon(0% 0, 100% 0, 100% 100vh);
+  clip-path: polygon(0% 0, 100% 0, 100% 100vh); }
+
+/* ----------left panel---------- */
+#panel-left {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  z-index: 2;
+  background-color: white; }
+
+.prev-next {
+  width: 80%;
+  height: 25px;
+  margin: 50px auto 100px auto; }
+  .prev-next li {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+    cursor: pointer; }
+    .prev-next li:nth-child(1) {
+      text-align: right;
+      border-right: 1px solid; }
+    .prev-next li:nth-child(2) {
+      border-left: 1px solid; }
+
+.describe {
+  width: 80%;
+  height: 40%;
+  margin: 0 auto; }
+  .describe h2 {
+    font-size: 22px;
+    margin: 20px 0 20px 0; }
+  .describe p {
+    font-size: 16px;
+    color: #555;
+    line-height: 30px; }
+  .describe ul {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px; }
+    .describe ul li {
+      list-style-type: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: 1px solid;
+      border-radius: 50%; }
+  .describe h3 {
+    margin-top: 26px;
+    font-size: 26px; }
+
+.add-to-bag {
+  width: 100%;
+  height: 16%;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .add-to-bag a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none; }
+
+/* ----------main panel---------- */
+#panel-right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  overflow: scroll;
+  opacity: 1;
+  background-color: rgba(217, 234, 249, 0.5);
+  z-index: 1; }
+
+.title {
+  position: absolute;
+  left: -5%;
+  font-size: 120px;
+  font-weight: 500;
+  color: white;
+  z-index: 1; }
+
+.model {
+  width: 100%;
+  height: 100%; }
+  .model img {
+    min-width: 80%;
+    min-height: 120%;
+    z-index: 2; }
+  .model .front {
+    position: absolute;
+    top: -5%;
+    right: 0; }
+  .model .back {
+    position: absolute;
+    top: -5%;
+    right: -100%; }
+
+.slider {
+  width: 33%;
+  height: 100px;
+  position: absolute;
+  left: 3%;
+  bottom: 1%; }
+  .slider ul {
+    width: 100%;
+    height: 100%; }
+    .slider ul li {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 33.3%;
+      height: 100px;
+      position: relative;
+      float: left;
+      z-index: 20;
+      transition: opacity 0.5s;
+      font-weight: 500;
+      font-size: 28; }
+      .slider ul li::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+        width: 100%;
+        height: 100px;
+        border-bottom: 5px solid; }
+
+.show {
+  opacity: 1; }
+
+.hide {
+  opacity: 0.5; }
+
+/* ----------shopping basket---------- */
+#basket {
+  position: absolute;
+  right: 0;
+  display: none;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(217, 234, 249, 0.7);
+  z-index: 99; }
+  #basket h1 {
+    font-size: 80px;
+    font-weight: 500;
+    color: white;
+    width: 80%;
+    margin: 5% 0 0 5%; }
+
+.list {
+  width: 85%;
+  height: 60%;
+  margin: 0 auto; }
+  .list .item-container {
+    width: 100%;
+    height: 80%; }
+    .list .item-container ul {
+      width: 100%;
+      height: 50px; }
+      .list .item-container ul li {
+        display: inline-flex;
+        margin: 20px 0 0 10%;
+        font-weight: 500; }
+  .list .final {
+    width: 50%;
+    height: 20%;
+    float: right; }
+    .list .final ul li {
+      display: block;
+      list-style-type: none;
+      color: grey;
+      text-align: right; }
+    .list .final ul span {
+      float: right;
+      font-size: 12px; }
+
+.checkout {
+  width: 50%;
+  height: 80px;
+  position: absolute;
+  right: 10%; }
+  .checkout li {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; }
+    .checkout li:nth-child(1) a {
+      color: black;
+      text-decoration: none; }
+    .checkout li:nth-child(2) {
+      background-color: black;
+      font-size: 28px;
+      font-weight: 500; }
+      .checkout li:nth-child(2) a {
+        color: white;
+        text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */
