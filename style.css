@@ -4,18 +4,18 @@
   padding: 0;
   box-sizing: border-box; }
 
-section {
+html {
   overflow: hidden; }
 
 .wrapper {
-  font-family: Helvetica, sans-serif;
-  width: 100vw;
+  font-family: Arial, sans-serif;
+  width: 100%;
   height: 100vh;
-  background-color: black;
-  overflow: hidden; }
+  background-color: black; }
 
 /* ----------Search & Cart---------- */
 #nav {
+  display: none;
   position: fixed;
   width: 100%;
   height: 50px;
@@ -45,39 +45,7 @@ section {
   font-size: 30px;
   margin: 0 20px 20px 20px; }
 
-/* ----------landing---------- */
-#wow-landing {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  /*-----Credits to worldofwarcraft.com----- */
-  background-image: url("image/wow-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: 120% 100%;
-  background-position: left;
-  opacity: 1;
-  z-index: 5;
-  /*-----Credits to @NamedYoro from devianart.com----- */ }
-  #wow-landing:hover {
-    opacity: 1; }
-  #wow-landing img {
-    width: 200px;
-    position: relative;
-    float: right;
-    margin: 5% 6% 0 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: transform 1s; }
-    #wow-landing img:hover {
-      transform: scale(1.2); }
-    #wow-landing img:first-child {
-      height: 200px; }
-    #wow-landing img:last-child {
-      height: 250px; }
-
+/* ----------intro------------ */
 #merchant {
   position: absolute;
   top: 0;
@@ -88,46 +56,6 @@ section {
   justify-content: center;
   align-items: center;
   overflow: scroll; }
-
-.storename {
-  position: absolute;
-  width: 50%;
-  height: 12%;
-  background: white;
-  color: black;
-  font-size: 4rem;
-  font-weight: 500;
-  opacity: 0.5;
-  border-top: 5px solid black;
-  border-bottom: 5px solid black;
-  border-radius: 10%;
-  z-index: 88; }
-  .storename:hover {
-    opacity: 1; }
-  .storename::before {
-    content: "";
-    width: 1.05em;
-    height: 1.05em;
-    border-bottom: 5px solid black;
-    border-left: 5px solid black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) rotate(-45deg);
-    background-color: white;
-    z-index: -1; }
-  .storename::after {
-    content: "";
-    width: 1.05em;
-    height: 1.05em;
-    border-top: 5px solid black;
-    border-right: 5px solid black;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%) rotate(-45deg);
-    background-color: white;
-    z-index: -1; }
 
 .bg-zoom {
   position: absolute;
@@ -155,7 +83,8 @@ section {
     bottom: 10%;
     width: 25px;
     height: 40px;
-    border: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     background-color: black;
     color: white;
     border-radius: 30%;
@@ -178,6 +107,39 @@ section {
     bottom: 8%; }
   100% {
     bottom: 10%; } }
+/* ----------landing---------- */
+#wow-landing {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /*-----Credits to worldofwarcraft.com----- */
+  background-image: url("image/wow-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+  background-position: left;
+  opacity: 0.6;
+  z-index: 5;
+  /*-----Credits to @NamedYoro from devianart.com----- */ }
+  #wow-landing:hover {
+    opacity: 1; }
+  #wow-landing img {
+    width: 200px;
+    position: relative;
+    float: right;
+    margin: 5% 6% 0 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 1s; }
+    #wow-landing img:hover {
+      transform: scale(1.2); }
+    #wow-landing img:first-child {
+      height: 200px; }
+    #wow-landing img:last-child {
+      height: 250px; }
+
 #league-landing {
   display: block;
   width: 100%;
@@ -190,7 +152,7 @@ section {
   background-repeat: no-repeat;
   background-size: 120% 100%;
   background-position: center;
-  opacity: 1;
+  opacity: 0.6;
   z-index: 5;
   /*-----Credits to leagueoflegends.com merchants store----- */ }
   #league-landing:hover {
@@ -352,9 +314,12 @@ section {
       position: relative;
       float: left;
       z-index: 20;
+      opacity: 0.3;
       transition: opacity 0.5s;
       font-weight: 500;
       font-size: 28; }
+      .slider ul li:hover {
+        opacity: 1; }
       .slider ul li::after {
         content: "";
         position: absolute;
@@ -364,12 +329,8 @@ section {
         width: 100%;
         height: 100px;
         border-bottom: 5px solid; }
-
-.show {
-  opacity: 1; }
-
-.hide {
-  opacity: 0.5; }
+    .slider ul .show {
+      opacity: 0.7; }
 
 /* ----------shopping basket---------- */
 #basket {
@@ -379,7 +340,7 @@ section {
   width: 70%;
   height: 100vh;
   background-color: rgba(217, 234, 249, 0.7);
-  z-index: 99; }
+  z-index: 10; }
   #basket h1 {
     font-size: 80px;
     font-weight: 500;

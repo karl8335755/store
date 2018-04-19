@@ -1,5 +1,5 @@
 
-$primary-font: Helvetica, sans-serif
+$primary-font: Arial, sans-serif
 $lol-color: #45A7CB
 $wow-color: #8160AC
 $yys-color: #E26D5C
@@ -10,31 +10,19 @@ $lightpink: #DBB3AE
 	margin: 0
 	padding: 0
 	box-sizing: border-box
-section
+html
 	overflow: hidden
 .wrapper
 	font-family: $primary-font
-	width: 100vw
+	width: 100%
 	height: 100vh
 	background-color: black
-	overflow: hidden
 
-// #trio
-// 	div
-// 		position: absolute
-// 		top: 0
-// 		left: 0
-// 		height: 100vh
-// 		width: 100%
-// 		display: block
-// 		z-index: 99
-// 		&:first-child
-
-// 		&:last-child 
 
 /* ----------Search & Cart----------*/
 
 #nav
+	display: none
 	position: fixed
 	width: 100%
 	height: 50px
@@ -53,7 +41,6 @@ section
 			align-items: center
 			cursor: pointer
 			img
-
 				width: 50%
 				height: 50%
 .burger
@@ -64,38 +51,7 @@ section
 	height: 50px
 	font-size: 30px
 	margin: 0 20px 20px 20px
-/* ----------landing----------*/
-#wow-landing
-	display: block
-	width: 100%
-	height: 100vh
-	position: absolute
-	left: 0
-	bottom: 0
-	/*-----Credits to worldofwarcraft.com-----*/
-	background-image: url('image/wow-bg.jpg')
-	background-repeat: no-repeat
-	background-size: 120% 100%
-	background-position: left
-	opacity: 1
-	z-index: 5
-	&:hover
-		opacity: 1
-	/*-----Credits to @NamedYoro from devianart.com-----*/
-	img
-		width: 200px
-		position: relative
-		float: right
-		margin: 5% 6% 0 0
-		visibility: hidden
-		opacity: 0
-		transition: transform 1s
-		&:hover
-			transform: scale(1.2)
-		&:first-child
-			height: 200px
-		&:last-child
-			height: 250px
+/* ----------intro------------*/
 
 #merchant
 	position: absolute
@@ -107,45 +63,45 @@ section
 	justify-content: center
 	align-items: center
 	overflow: scroll
-.storename
-	position: absolute
-	width: 50%
-	height: 12%
-	background: white
-	color: black
-	font-size: 4rem
-	font-weight: 500
-	opacity: .5
-	border-top: 5px solid black
-	border-bottom: 5px solid black
-	border-radius: 10%
-	z-index: 88
-	&:hover
-		opacity: 1
-	&::before
-		content: ''
-		width: 1.05em
-		height: 1.05em
-		border-bottom: 5px solid black
-		border-left: 5px solid black
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translateX(-50%) rotate(-45deg) 
-		background-color: white
-		z-index: -1
-	&::after
-		content: ''
-		width: 1.05em
-		height: 1.05em
-		border-top: 5px solid black
-		border-right: 5px solid black
-		position: absolute
-		bottom: 50%
-		left: 50%
-		transform: translateX(-50%) rotate(-45deg) 
-		background-color: white
-		z-index: -1
+// .storename
+// 	position: absolute
+// 	width: 50%
+// 	height: 12%
+// 	background: white
+// 	color: black
+// 	font-size: 4rem
+// 	font-weight: 500
+// 	opacity: .5
+// 	border-top: 5px solid black
+// 	border-bottom: 5px solid black
+// 	border-radius: 10%
+// 	z-index: 88
+// 	&:hover
+// 		opacity: 1
+// 	&::before
+// 		content: ''
+// 		width: 1.05em
+// 		height: 1.05em
+// 		border-bottom: 5px solid black
+// 		border-left: 5px solid black
+// 		position: absolute
+// 		top: 50%
+// 		left: 50%
+// 		transform: translateX(-50%) rotate(-45deg) 
+// 		background-color: white
+// 		z-index: -1
+// 	&::after
+// 		content: ''
+// 		width: 1.05em
+// 		height: 1.05em
+// 		border-top: 5px solid black
+// 		border-right: 5px solid black
+// 		position: absolute
+// 		bottom: 50%
+// 		left: 50%
+// 		transform: translateX(-50%) rotate(-45deg) 
+// 		background-color: white
+// 		z-index: -1
 .bg-zoom
 	position: absolute
 	top: 0
@@ -173,7 +129,8 @@ section
 		bottom: 10%
 		width: 25px
 		height: 40px
-		border: 1px solid white
+		border-left: 1px solid white
+		border-right: 1px solid white
 		background-color: black
 		color: white
 		border-radius: 30%
@@ -191,11 +148,44 @@ section
 @keyframes bounce
 	0%
 		bottom: 10%
-	
 	50%
 		bottom: 8%
 	100%
 		bottom: 10%
+
+
+/* ----------landing----------*/
+#wow-landing
+	display: block
+	width: 100%
+	height: 100vh
+	position: absolute
+	left: 0
+	bottom: 0
+	/*-----Credits to worldofwarcraft.com-----*/
+	background-image: url('image/wow-bg.jpg')
+	background-repeat: no-repeat
+	background-size: 120% 100%
+	background-position: left
+	opacity: .6
+	z-index: 5
+	&:hover
+		opacity: 1
+	/*-----Credits to @NamedYoro from devianart.com-----*/
+	img
+		width: 200px
+		position: relative
+		float: right
+		margin: 5% 6% 0 0
+		visibility: hidden
+		opacity: 0
+		transition: transform 1s
+		&:hover
+			transform: scale(1.2)
+		&:first-child
+			height: 200px
+		&:last-child
+			height: 250px
 
 
 #league-landing
@@ -210,7 +200,7 @@ section
 	background-repeat: no-repeat
 	background-size: 120% 100%
 	background-position: center
-	opacity: 1
+	opacity: .6
 	z-index: 5
 
 	&:hover
@@ -373,9 +363,12 @@ section
 			position: relative
 			float: left
 			z-index: 20
+			opacity: .3
 			transition: opacity .5s
 			font-weight: 500
 			font-size: 28
+			&:hover
+				opacity: 1
 			&::after
 				content: ''
 				position: absolute
@@ -385,10 +378,8 @@ section
 				width: 100%
 				height: 100px
 				border-bottom: 5px solid
-.show
-	opacity: 1
-.hide
-	opacity: 0.5
+		.show
+			opacity: .7
 /* ----------shopping basket----------*/
 
 #basket
@@ -398,7 +389,7 @@ section
 	width: 70%
 	height: 100vh
 	background-color: rgba(217,234,249,.7)
-	z-index: 99
+	z-index: 10
 	h1
 		font-size: 80px
 		font-weight: 500
