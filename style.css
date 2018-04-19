@@ -11,6 +11,7 @@ section {
   font-family: Helvetica, sans-serif;
   width: 100vw;
   height: 100vh;
+  background-color: black;
   overflow: hidden; }
 
 /* ----------Search & Cart---------- */
@@ -38,7 +39,7 @@ section {
 .burger {
   position: absolute;
   top: -5%;
-  left: 0;
+  left: 10%;
   width: 50px;
   height: 50px;
   font-size: 30px;
@@ -46,6 +47,7 @@ section {
 
 /* ----------landing---------- */
 #wow-landing {
+  display: block;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -67,7 +69,8 @@ section {
     float: right;
     margin: 5% 6% 0 0;
     visibility: hidden;
-    opacity: 0; }
+    opacity: 0;
+    transition: transform 1s; }
     #wow-landing img:hover {
       transform: scale(1.2); }
     #wow-landing img:first-child {
@@ -77,6 +80,7 @@ section {
 
 #merchant {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -87,59 +91,66 @@ section {
 
 .storename {
   position: absolute;
-  width: 2000px;
+  width: 50%;
   height: 12%;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   font-size: 4rem;
   font-weight: 500;
-  opacity: 0.7;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
-  z-index: 8; }
+  opacity: 0.5;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  border-radius: 10%;
+  z-index: 88; }
   .storename:hover {
     opacity: 1; }
   .storename::before {
     content: "";
     width: 1.05em;
     height: 1.05em;
-    border-bottom: 5px solid white;
-    border-left: 5px solid white;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) rotate(-45deg);
-    background-color: black;
+    background-color: white;
     z-index: -1; }
   .storename::after {
     content: "";
     width: 1.05em;
     height: 1.05em;
-    border-top: 5px solid white;
-    border-right: 5px solid white;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
     position: absolute;
     bottom: 50%;
     left: 50%;
     transform: translateX(-50%) rotate(-45deg);
-    background-color: black;
+    background-color: white;
     z-index: -1; }
 
 .bg-zoom {
   position: absolute;
+  top: 0;
   width: 100%;
-  height: 120vh;
+  height: 101vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   z-index: 9;
   background-color: black;
-  opacity: 1;
-  color: white;
-  font-size: 8rem;
-  font-weight: 500; }
+  opacity: 1; }
+  .bg-zoom h1 {
+    display: none;
+    color: white;
+    font-size: 8rem;
+    font-weight: 500;
+    cursor: default; }
   .bg-zoom button {
     position: absolute;
+    display: none;
     left: 50%;
     bottom: 10%;
     width: 25px;
@@ -148,9 +159,27 @@ section {
     background-color: black;
     color: white;
     border-radius: 30%;
-    opacity: 0; }
+    cursor: pointer;
+    transition: transform 0.5s;
+    animation-name: bounce;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite; }
+    .bg-zoom button:hover {
+      border-color: gold;
+      color: gold;
+      animation-name: none;
+      transform: scale(1.2); }
 
+@keyframes bounce {
+  0% {
+    bottom: 10%; }
+  50% {
+    bottom: 8%; }
+  100% {
+    bottom: 10%; } }
 #league-landing {
+  display: block;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -171,10 +200,11 @@ section {
     height: 150px;
     position: absolute;
     visibility: hidden;
+    transform: none;
     opacity: 0;
-    transition: transform 0.5s; }
+    transition: transform 1s; }
     #league-landing img:hover {
-      transform: scale(1.2); }
+      transform: scale(3); }
     #league-landing img:nth-child(1) {
       left: 65%;
       bottom: 25%; }
@@ -189,21 +219,23 @@ section {
       left: 30%; }
 
 .leftclip {
-  -webkit-clip-path: polygon(0 0%, 0 100vh, 100% 100vh);
-  clip-path: polygon(0 0%, 0 100vh, 100% 100vh); }
+  -webkit-clip-path: polygon(0 1%, 0 100vh, 99% 100vh);
+  clip-path: polygon(0 1%, 0 100vh, 99% 100vh); }
 
 .rightclip {
-  -webkit-clip-path: polygon(0% 0, 100% 0, 100% 100vh);
-  clip-path: polygon(0% 0, 100% 0, 100% 100vh); }
+  -webkit-clip-path: polygon(1% 0, 100% 0, 100% 99vh);
+  clip-path: polygon(1% 0, 100% 0, 100% 99vh); }
 
 /* ----------left panel---------- */
 #panel-left {
-  display: inline-block;
-  position: relative;
+  display: none;
+  position: absolute;
+  left: -30%;
   width: 30%;
   height: 100%;
-  z-index: 2;
-  background-color: white; }
+  z-index: 50;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.7); }
 
 .prev-next {
   width: 80%;
@@ -247,7 +279,7 @@ section {
       border-radius: 50%; }
   .describe h3 {
     margin-top: 26px;
-    font-size: 26px; }
+    font-size: 50px; }
 
 .add-to-bag {
   width: 100%;
@@ -265,27 +297,19 @@ section {
 
 /* ----------main panel---------- */
 #panel-right {
-  display: inline-block;
+  display: none;
   position: absolute;
-  right: 0;
+  right: -70%;
   width: 70%;
   height: 100vh;
-  overflow: scroll;
-  opacity: 1;
-  background-color: rgba(217, 234, 250, 0.5);
-  z-index: 1; }
-
-.title {
-  position: absolute;
-  left: -5%;
-  font-size: 120px;
-  font-weight: 500;
-  color: white;
-  z-index: 1; }
+  overflow: hidden;
+  background-color: #d9eafa;
+  z-index: 50; }
 
 .model {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   .model img {
     min-width: 80%;
     min-height: 120%;
@@ -293,13 +317,24 @@ section {
   .model .front {
     position: absolute;
     top: -5%;
-    right: 0; }
+    right: 0;
+    opacity: 0; }
   .model .back {
     position: absolute;
     top: -5%;
     right: -100%; }
 
+.title {
+  position: absolute;
+  width: 150%;
+  left: 0;
+  font-size: 120px;
+  font-weight: 500;
+  color: white;
+  z-index: 1; }
+
 .slider {
+  visibility: hidden;
   width: 33%;
   height: 100px;
   position: absolute;
