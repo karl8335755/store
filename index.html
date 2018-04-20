@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="wrapper">
+		<div id="up"><span>^</span></div>
 		<section id="nav">
 			<ul>
 				<li class="burger">
@@ -27,22 +28,22 @@
 			longdesc="This is an awesome statue for a good price! This is a must have for any statue lover. It looks impressive! Design, model, paint, everything is amazing, it's one of my favorite statues.#8160AC/">
 			<img src="image/sylvanas.png" alt="Sylvanas  <br>The Windrunner"
 			longdesc="The statue is very beautiful and well made. She really is stunning. The details are fantastic. So glad I got her and Stormrage. They make quite a pair.#45A7CB/">
+			<div class="up"></div>
 		</section>
 		<section id="merchant">
 			<div class="bg-zoom">
 				<h1>Action Figure Store</h1>
 				<button id="pull">↓</button>
 			</div>
-<!-- 			<header class="storename">Action Figure Store</header> -->
 		</section>
 		<section id="league-landing" class="rightclip">
-
 			<img src="image/veig.png" alt="Veigar    <br>The Final Boss"
 			longdesc="Don't forget to save before entering! Final Boss Veigar descends into the Series 2 figure line. Our most leveled up Limited Edition figure to date to rule your collection.#D9EAF9/">
 			<img src="image/diana.png" alt="Diana     <br>Lunar Goddness"
 			longdesc="The Scorn of the Moon in her goddess form. Special Edition Lunar Goddess Diana is ready to swing her blade in the Series 2 figure line.#DBB3AE/">
 			<img src="image/thresh.png" alt="Thresh    <br>The Warden"
 			longdesc="This time Thresh is the one in The Box. Thresh hooks his way into the Series 2 figure line.#8160AC/">
+			<div class="up"></div>
 		</section>
 		<div id="panel-left">
 
@@ -62,7 +63,7 @@
 				<h3>$25</h3>
 			</div>
 			<div class="add-to-bag">
-				<a href="">+ Add to bag</a>
+				<h3>+ Add to bag</h3>
 			</div>
 		</div>
 
@@ -92,28 +93,19 @@
 		<section id="basket">
 			<h1>Shopping basket</h1>
 			<div class="list">
-				<div class="item-container">
-					<ul>
-						<li>Product</li>
-						<li>Description</li>
-						<li>Size</li>
-						<li>Units</li>
-						<li>Amount</li>
-					</ul>
-					<div></div>
-				</div>
-				<div class="final">
-					<ul>
-						<li>Total products:</li>
-						<li>Estimating Shipping Cost:</li>
-						<li>Total:</li>
-						<span>*Including Tax</span>
-					</ul>
-				</div>
+				<table class="item-container">
+					<tr>
+				    	<th>Name</th>
+				    	<th>Quantity</th> 
+				    	<th>Price</th>
+				    	<th></th>
+					</tr>
+
+				</table>
 			</div>
 			<ul class="checkout">
-				<li>
-					<a href="">Continue shopping</a>
+				<li id="continue">
+					Continue shopping
 				</li>
 				<li>
 					<a href="">Checkout</a>

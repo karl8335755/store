@@ -46,7 +46,7 @@ html
 .burger
 	position: absolute
 	top: -5%
-	left: 10%
+	left: 25%
 	width: 50px
 	height: 50px
 	font-size: 30px
@@ -63,45 +63,7 @@ html
 	justify-content: center
 	align-items: center
 	overflow: scroll
-// .storename
-// 	position: absolute
-// 	width: 50%
-// 	height: 12%
-// 	background: white
-// 	color: black
-// 	font-size: 4rem
-// 	font-weight: 500
-// 	opacity: .5
-// 	border-top: 5px solid black
-// 	border-bottom: 5px solid black
-// 	border-radius: 10%
-// 	z-index: 88
-// 	&:hover
-// 		opacity: 1
-// 	&::before
-// 		content: ''
-// 		width: 1.05em
-// 		height: 1.05em
-// 		border-bottom: 5px solid black
-// 		border-left: 5px solid black
-// 		position: absolute
-// 		top: 50%
-// 		left: 50%
-// 		transform: translateX(-50%) rotate(-45deg) 
-// 		background-color: white
-// 		z-index: -1
-// 	&::after
-// 		content: ''
-// 		width: 1.05em
-// 		height: 1.05em
-// 		border-top: 5px solid black
-// 		border-right: 5px solid black
-// 		position: absolute
-// 		bottom: 50%
-// 		left: 50%
-// 		transform: translateX(-50%) rotate(-45deg) 
-// 		background-color: white
-// 		z-index: -1
+
 .bg-zoom
 	position: absolute
 	top: 0
@@ -171,6 +133,7 @@ html
 	z-index: 5
 	&:hover
 		opacity: 1
+
 	/*-----Credits to @NamedYoro from devianart.com-----*/
 	img
 		width: 200px
@@ -187,6 +150,43 @@ html
 		&:last-child
 			height: 250px
 
+#up
+	display: none
+	width: 100px
+	height: 70px
+	position: absolute
+	left: 50%
+	top: 0
+	transform: translateX(-50%)
+	z-index: 6
+	cursor: pointer
+	span
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		top: 0
+		width: 100%
+		height: 100%
+		padding-top: 50px
+		color: rgb(65,65,65)
+		font-size: 70px
+
+		transition: transform .5s
+		animation-name: bounce2
+		animation-duration: 1.4s
+		animation-timing-function: ease-in 
+		animation-iteration-count: infinite 
+		&:hover
+			transform: scale(1.2)
+			animation-name: none
+@keyframes bounce2
+	0%
+		top: 8%
+	50%
+		top: 4%
+	100%
+		top: 8%
 
 #league-landing
 	display: block
@@ -225,9 +225,6 @@ html
 		&:nth-child(3)
 			left: 0
 			top: 20%
-		&:nth-child(4)
-			top: 0
-			left: 30%
 .leftclip
 	-webkit-clip-path: polygon(0 1%, 0 100vh, 99% 100vh)
 	clip-path: polygon(0 1%, 0 100vh, 99% 100vh)
@@ -298,10 +295,9 @@ html
 	display: flex
 	justify-content: center
 	align-items: center
-	a
-		font-size: 16px
-		color: white
-		text-decoration: none
+	font-size: 16px
+	color: white
+	cursor: pointer
 
 
 
@@ -388,8 +384,8 @@ html
 	display: none//inline-block
 	width: 70%
 	height: 100vh
-	background-color: rgba(217,234,249,.7)
-	z-index: 10
+	background-color: rgb(217,234,249)
+	z-index: 51
 	h1
 		font-size: 80px
 		font-weight: 500
@@ -397,19 +393,21 @@ html
 		width: 80%
 		margin: 5% 0 0 5% 
 .list
+	position: relative
 	width: 85%
 	height: 60%
 	margin: 0 auto
+	overflow-y: auto
 	.item-container
 		width: 100%
-		height: 80%
-		ul
-			width: 100%
-			height: 50px
-			li
-				display: inline-flex
-				margin: 20px 0 0 10%
-				font-weight: 500
+		th
+			font-size: 26px
+			padding-top: 8px
+			text-align: center
+		tr
+		td
+			margin-top: 8px
+			text-align: center
 	.final
 		width: 50%
 		height: 20%
@@ -437,9 +435,9 @@ html
 		justify-content: center
 		align-items: center
 		&:nth-child(1)
-			a
-				color: black
-				text-decoration: none
+			color: black
+			cursor: pointer
+			text-decoration: none
 		&:nth-child(2)
 			background-color: black
 			font-size: 28px
