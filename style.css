@@ -124,7 +124,7 @@ html {
   background-repeat: no-repeat;
   background-size: 120% 100%;
   background-position: left;
-  opacity: 0.3;
+  opacity: 0;
   z-index: 5;
   /*-----Credits to @NamedYoro from devianart.com----- */ }
   #wow-landing:hover {
@@ -196,7 +196,7 @@ html {
   background-repeat: no-repeat;
   background-size: 120% 100%;
   background-position: center;
-  opacity: 0.3;
+  opacity: 0;
   z-index: 5;
   /*-----Credits to leagueoflegends.com merchants store----- */ }
   #league-landing:hover {
