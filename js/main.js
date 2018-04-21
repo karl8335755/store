@@ -100,7 +100,7 @@ $(document).ready(function(){
     let itemList;
 
     $.ajax({
-        url: "../characters.json",
+        url: "/characters.json",
         dataType: 'json',
         type: 'get',
         cache: false,
