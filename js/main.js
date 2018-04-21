@@ -12,13 +12,13 @@ $(document).ready(function(){
 /*---------------------------------------------------------*/
 
     $("#pull").on("click",function(){
-        $('#league-landing,#wow-landing').animation({opacity:.3});
+        $('#league-landing,#wow-landing').css('z-index','5');
         $("#merchant").animate({top: "-120%"},1000);
     })
     $(".bg-zoom").on("scroll",function(e) {
         //console.log($(this).scrollTop());
         if($(this).scrollTop()>1){
-            $('#league-landing,#wow-landing').animation({opacity:.3});
+            $('#league-landing,#wow-landing').css('z-index','5');
             $('#merchant').animate({top: "-120%"},1000);
         }
     });
