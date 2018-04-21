@@ -190,7 +190,7 @@ $(document).ready(function(){
             .attr("src",obj.front)
             .animate({opacity: 1},1000);
             $(".title").css("opacity","0")
-            .html(obj.name)
+            .html(obj.name+"</br>"+obj.nickname)
             .animate({opacity: 1},1000);
             $(".back").attr("src",obj.back);
             $("#panel-right").animate({"background-color":"#000"},500)
