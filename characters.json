@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "game": "league", 
+        "name": "Veigar",
+        "nickname":"The Final Boss",
+        "front": "image/veig.png",
+        "back": "image/veig1.png",
+        "desc":"Don't forget to save before entering! Final Boss Veigar descends into the Series 2 figure line. Our most leveled up Limited Edition figure to date to rule your collection.",
+        "bg":"#D9EAF9",
+        "price": 25
+    },
+    {
+        "id": 2,
+        "game": "league", 
+        "name": "Diana",
+        "nickname": "Lunar Goddness",
+        "front": "image/diana.png",
+        "back": "image/diana1.png",
+        "desc":"The Scorn of the Moon in her goddess form. Special Edition Lunar Goddess Diana is ready to swing her blade in the Series 2 figure line.",
+        "bg":"#DBB3AE",
+        "price": 25
+    },
+    {
+        "id": 3,
+        "game": "league", 
+        "name": "Thresh",
+        "nickname": "The Warden",
+        "front": "image/thresh.png",
+        "back": "image/thresh1.png",
+        "desc":"This time Thresh is the one in The Box. Thresh hooks his way into the Series 2 figure line.",
+        "bg":"#8160AC",
+        "price": 25
+    },
+    {
+        "id": 4,
+        "game": "wow", 
+        "name": "Illidan",
+        "nickname": "The Betrayer",
+        "front": "image/illidan1.png",
+        "desc":"This is an awesome statue for a good price! This is a must have for any statue lover. It looks impressive! Design, model, paint, everything is amazing, it's one of my favorite statues.",
+        "bg":"#8160AC",
+        "price": 350
+    },
+    {
+        "id": 5,
+        "game": "wow", 
+        "name": "Sylvanas",
+        "nickname": "The Windrunner",
+        "front": "image/sylvanas1.png",
+        "desc":"The statue is very beautiful and well made. She really is stunning. The details are fantastic. So glad I got her and Stormrage. They make quite a pair.",
+        "bg":"#45A7CB",
+        "price": 350
+    }
+]

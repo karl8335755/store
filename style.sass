@@ -16,7 +16,7 @@ html
 	font-family: $primary-font
 	width: 100%
 	height: 100vh
-	background-color: black
+	background-color: rgba(0,0,0,1)
 
 
 /* ----------Search & Cart----------*/
@@ -46,7 +46,7 @@ html
 .burger
 	position: absolute
 	top: -5%
-	left: 25%
+	left: 20%
 	width: 50px
 	height: 50px
 	font-size: 30px
@@ -58,18 +58,16 @@ html
 	top: 0
 	width: 100%
 	height: 100vh
-	text-align: center
-	display: flex
-	justify-content: center
-	align-items: center
-	overflow: scroll
+	overflow: hidden
 
 .bg-zoom
 	position: absolute
 	top: 0
 	width: 100%
-	height: 101vh
-	overflow: hidden
+	height: 105%
+	box-sizing: content-box
+	padding-right: 17px
+	overflow-y: scroll
 	display: flex
 	justify-content: center
 	align-items: center
@@ -77,7 +75,12 @@ html
 	z-index: 9
 	background-color: black
 	opacity: 1
-
+	&:after
+		content: ''
+		position: absolute
+		width: 100%
+		height: 5%
+		bottom: -5%
 	h1
 		display: none
 		color: white
@@ -129,11 +132,14 @@ html
 	background-repeat: no-repeat
 	background-size: 120% 100%
 	background-position: left
-	opacity: .6
+	opacity: .3
 	z-index: 5
+
 	&:hover
 		opacity: 1
-
+	&:hover ~ #hovertext
+		transition: opacity 1.5s
+		opacity: 1
 	/*-----Credits to @NamedYoro from devianart.com-----*/
 	img
 		width: 200px
@@ -158,7 +164,7 @@ html
 	left: 50%
 	top: 0
 	transform: translateX(-50%)
-	z-index: 6
+	z-index: 7
 	cursor: pointer
 	span
 		display: flex
@@ -200,10 +206,13 @@ html
 	background-repeat: no-repeat
 	background-size: 120% 100%
 	background-position: center
-	opacity: .6
+	opacity: .3
 	z-index: 5
 
 	&:hover
+		opacity: 1
+	&:hover ~ #hovertext
+		transition: opacity 1.5s
 		opacity: 1
 	/*-----Credits to leagueoflegends.com merchants store-----*/
 	img
@@ -257,8 +266,12 @@ html
 		&:nth-child(1)
 			text-align: right
 			border-right: 1px solid
+			&:before
+				content: '<<'
 		&:nth-child(2)
 			border-left: 1px solid
+			&:after
+				content: ">>"
 .describe
 	width: 80%
 	height: 40%
@@ -270,19 +283,25 @@ html
 		font-size: 16px
 		color: #555
 		line-height: 30px
-	ul
-		width: 100%
-		height: 50px
-		margin-top: 20px
-		li
-			list-style-type: none
-			display: inline-flex
-			justify-content: center
-			align-items: center
-			width: 50px
-			height: 50px
-			border: 1px solid
-			border-radius: 50%
+	img
+		position: absolute
+		width: 80%
+		height: 50%
+		bottom: 10%
+		right: 0
+	// ul
+	// 	width: 100%
+	// 	height: 50px
+	// 	margin-top: 20px
+	// 	li
+	// 		list-style-type: none
+	// 		display: inline-flex
+	// 		justify-content: center
+	// 		align-items: center
+	// 		width: 50px
+	// 		height: 50px
+	// 		border: 1px solid
+	// 		border-radius: 50%
 	h3
 		margin-top: 26px
 		font-size: 50px
@@ -300,7 +319,30 @@ html
 	cursor: pointer
 
 
-
+#hovertext
+	position: absolute
+	width: 100%
+	height: 100%
+	z-index: 4
+	opacity: 0
+	h1
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		width: 40%
+		height: 65%
+		font-size: 120px
+		font-weight: 500
+		color: white
+		text-align: center
+		span: 60px
+		&:first-child
+			top: 0
+			right: 0
+		&:last-child
+			bottom: 0 
+			left: 0
 /* ----------main panel----------*/
 
 #panel-right
@@ -395,7 +437,7 @@ html
 .list
 	position: relative
 	width: 85%
-	height: 60%
+	height: 40%
 	margin: 0 auto
 	overflow-y: auto
 	.item-container
@@ -408,25 +450,41 @@ html
 		td
 			margin-top: 8px
 			text-align: center
-	.final
-		width: 50%
-		height: 20%
-		float: right
-		ul
-			li
-				display: block
-				list-style-type: none
-				color: grey
-				text-align: right
+			&:nth-child(3)::before
+				content: "$ "
+		button
+			width: 20px
+			font-size: 20px
+			border-radius: 50%
+			background-color: rgba(255,255,255,0)
+.final
+	position: absolute
+	right: 10%
+	width: 50%
+	height: 20%
+	bottom: 80px
+	ul
+		li
+			display: block
+			list-style-type: none
+			color: grey
+			text-align: left
 			span
-				float: right
-				font-size: 12px
+				position: absolute
+				right: 0
+				font-size: 20px
+				&::before
+					content: "$ "
+
+		span
+			font-size: 12px
 
 .checkout
 	width: 50%
 	height: 80px
 	position: absolute
 	right: 10%
+	bottom: 0
 	li
 		width: 50%
 		height: 100%
@@ -446,4 +504,38 @@ html
 				color: white
 				text-decoration: none
 		
-
+@media only screen and (max-width: 1100px)
+	.model
+		img
+			min-width: 50%
+			min-height: 80%
+		.front
+			top: 15%
+			right: -5%
+		.back
+			top: 15%
+			right: -105%
+	.title
+		font-size: 80px
+	#hovertext h1
+		font-size: 50px
+		span
+			font-size: 25px
+@media only screen and (max-width: 500px)
+	#panel-right
+		width: 0
+	#panel-left
+		width: 100%
+	#basket
+		width: 100%
+	.model
+		width: 80%
+		margin-left: auto
+		margin-right: auto
+		img
+			width: 100%
+			height: 120%
+	#hovertext h1
+		font-size: 28px
+		span
+			font-size: 14px
